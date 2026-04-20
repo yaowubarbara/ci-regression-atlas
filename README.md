@@ -6,16 +6,29 @@ across 11 widely-used OSS repositories.
 
 ## What this is
 
-A 13,490-comment dataset, a 65-case hand-labelled diagnostic set, and
-three descriptive findings about flag-to-outcome behavior in real
-engineering workflows. Plus a supplementary static audit of the
-`codspeed-optimize` Claude Code skill specification and a 377-line
-prototype gate (`variance_gate.py`) closing the reward-hacking
-surfaces the audit identifies.
+This repository contains **two independent pieces of work** on the
+CodSpeed OSS ecosystem. They share subject matter but have no
+analytical dependency on each other — either can be read alone.
 
-Start with [`REPORT.md`](./REPORT.md) for the full analysis, or
-[`REPORT_summary.md`](./REPORT_summary.md) for a 3-page executive
-summary.
+**1. Empirical study of flag-handling behavior (the main reading path).**
+A crawl of 13,490 `codspeed-hq[bot]` comments across 11 public OSS
+repos, distilled into a 65-case hand-labelled diagnostic set and three
+descriptive findings about outcome variance, benchmark recurrence, and
+response latency. Answers: "when the bot flags a regression, what
+actually happens in the wild?" See [`REPORT.md`](./REPORT.md) §TL;DR or
+[`REPORT_summary.md`](./REPORT_summary.md) for a 3-page compact read.
+
+**2. Static audit of the `codspeed-optimize` skill specification
+(supplementary).** A line-by-line review of the open SKILL.md surfaces
+four reward-hacking paths an optimizer agent could follow under a
+literal reading of the spec. A 377-line `variance_gate.py` prototype
+closes all four paths, with 9 passing smoke tests. Answers: "if an
+agent runs this spec literally, where can it game the reward?" See
+[`findings.md`](./findings.md) and [`REPORT.md`](./REPORT.md) §3–§4.
+
+The empirical study does not cite the audit; the audit does not cite
+the empirical study. Reading time: ~10 min for Piece 1 via the summary,
+~15 min for Piece 2 via findings.md.
 
 ## Scope
 
