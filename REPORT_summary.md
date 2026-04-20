@@ -104,14 +104,12 @@ bands.
 ## Companion: safety audit (supplementary)
 
 A separate static audit of `skills/codspeed-optimize/SKILL.md`
-identifies four reward-hacking surfaces in the open agent specification
-(benchmark file modification, `[profile.bench]` editing, test
-suppression, sub-noise-floor chasing) and ships a **377-line
-`variance_gate.py`** prototype closing all four with nine passing
-smoke tests. This is a safety layer for future agent-driven optimizers,
-methodologically grounded in the public RLVR / specification-gaming
-literature (DeepSeek-R1-Zero, TRLX, verl). See `findings.md` and
-`rlvr_mapping.md` for details.
+identifies four reward-hacking surfaces in the open agent
+specification (benchmark file modification, `[profile.bench]`
+editing, test suppression, sub-noise-floor chasing) and ships a
+**377-line `variance_gate.py`** prototype closing all four with
+nine passing smoke tests. This is a safety layer for future
+agent-driven optimizers. See `findings.md` for details.
 
 ---
 

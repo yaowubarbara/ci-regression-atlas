@@ -18,10 +18,7 @@ It contains:
 - a supplementary static audit of the `codspeed-optimize` skill
   specification (`skills/codspeed-optimize/SKILL.md`) surfacing four
   reward-hacking surfaces, with a 377-line `variance_gate.py`
-  mitigation prototype (§3),
-- a one-page methodology companion mapping the findings to
-  verifiable-reward principles from the public RLVR literature
-  (`rlvr_mapping.md`).
+  mitigation prototype (§3).
 
 All data is public (GitHub REST API). All code is zero-dependency
 stdlib Python. No affiliation with CodSpeed or any surveyed
@@ -152,7 +149,7 @@ p25/p50/p75/p90 with `numpy.percentile` will yield slightly different
 values.
 
 Each finding points to a concrete agentic-feature direction. Findings
-with tickets in §6.
+with tickets in §5.
 
 ---
 
@@ -393,25 +390,7 @@ These are disclosed rather than hidden.
 
 ---
 
-## §5. RLVR methodology companion
-
-`rlvr_mapping.pdf` (1-page A4, 747 words) maps reward-engineering
-principles from the public RLVR literature (DeepSeek-R1-Zero,
-specification-gaming research, open-source training frameworks like
-TRLX and verl) to the `codspeed-optimize` reward-hacking surface.
-The mapping is methodological (gate design), not training (no
-fine-tuning proposal). Each row of the mapping table cites a specific
-finding from §3 as anchor.
-
-Read the PDF for the mapping table and the proposed 30-day prototype
-plan. In short: define a bucketed reward schema (MERGE_READY /
-NEEDS_REVIEW / REJECT), compose the existing `variance_gate.py`
-detectors with two new checks (bench-subset + cross-bench regression),
-ship as `codspeed-optimize --strict` opt-in.
-
----
-
-## §6. Linear-ready tickets
+## §5. Linear-ready tickets
 
 Three tickets structured for direct paste into Linear / Jira. Each
 has priority, labels, context with repo-link evidence, acceptance
@@ -492,10 +471,10 @@ exercise `n > len`.
 
 **Context.** The current `compare_runs`-delta signal is a raw scalar
 that the agent can both influence (via findings A1, A2) and be misled
-by (via A3, A4 — below-noise-floor gains). `rlvr_mapping.pdf`
-proposes a bucketed replacement — MERGE_READY / NEEDS_REVIEW /
-REJECT — each defined by a deterministic verifier. This ticket
-implements the verifier pipeline.
+by (via A3, A4, below-noise-floor gains). A bucketed replacement,
+MERGE_READY / NEEDS_REVIEW / REJECT, each defined by a deterministic
+verifier, addresses both. This ticket implements the verifier
+pipeline.
 
 **Acceptance criteria.**
 1. A typed JSON reward contract with the three buckets and their
@@ -522,13 +501,12 @@ implements the verifier pipeline.
    with CI, not a hit-threshold claim.
 
 **Estimate.** Epic-sized; split into three tickets during sprint
-planning — (3a) reward schema + JSON contract, (3b) verifier pipeline
+planning: (3a) reward schema + JSON contract, (3b) verifier pipeline
 composition, (3c) Atlas replay + hand-labeled precision study. Total
-~4 engineer-weeks. See the 30-day plan in `rlvr_mapping.pdf`.
+~4 engineer-weeks.
 
 **Linked evidence.**
 - `findings.md` §A3, §A4
-- `rlvr_mapping.pdf` (bucketed schema + 30-day plan)
 - `scripts/variance_gate.py` LIMITATIONS §4 (subset-trust gap)
 - `labeled/diagnostic_set.jsonl` (Atlas replay set)
 
@@ -602,7 +580,6 @@ Out of scope.
 | Artifact | What it is |
 |---|---|
 | `findings.md` | Full four-finding SKILL.md audit (1,759 words) |
-| `rlvr_mapping.pdf` | 1-page RLVR methodology companion (747 words) |
 | `scripts/variance_gate.py` | 5-detector prototype, 377 lines, stdlib-only |
 | `scripts/test_variance_gate.sh` | 9-scenario smoke test, all green |
 | `scripts/analyze.py` | W v2 statistical analysis |

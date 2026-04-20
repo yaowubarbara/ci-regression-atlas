@@ -75,24 +75,17 @@ python3 scripts/make_figures.py   # Figures (needs matplotlib)
 bash    scripts/test_variance_gate.sh  # 9-scenario gate smoke test
 ```
 
-Regenerate the methodology PDF:
-
-```bash
-python3 scripts/build_pdf.py      # builds rlvr_mapping.pdf
-```
-
 ## Directory layout
 
 ```
-REPORT.md                # Main report (~540 lines)
-REPORT_summary.md        # 3-page executive summary
+REPORT.md                # Main report
+REPORT_summary.md        # Executive summary
 findings.md              # §3: Static audit of codspeed-optimize SKILL.md
-rlvr_mapping.md + .pdf   # Methodology companion (public RLVR literature)
 raw/                     # Unenriched bot-comment metadata (11 JSONL files)
 parsed/                  # Enriched + structured bot comments (11 JSONL files)
 labeled/                 # Diagnostic set + analysis outputs
 figures/                 # 3 figures (forest plot, bootstrap, era × mode)
-scripts/                 # 8 Python scripts + 1 shell test harness
+scripts/                 # 7 Python scripts + 1 shell test harness
 ```
 
 ## License
