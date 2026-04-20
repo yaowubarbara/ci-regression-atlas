@@ -298,6 +298,12 @@ variance data, or (b) over-sampling mixed-mode repos.
 
 ## §3. SKILL.md audit
 
+This section is a **static audit of the specification**. No live
+`codspeed-optimize` session was run, and no actual agent misbehavior
+is asserted or observed. The findings describe *what the specification
+would permit* if an adversarial or incentive-pressured agent followed
+it literally.
+
 Full findings are in `findings.md`. Four findings, each with exact
 SKILL.md citation, hypothetical failure scenario, and proposed
 mitigation:
@@ -313,10 +319,11 @@ mitigation:
 
 - **A2 — The `.take(n)` → `[..n]` example is not semantically
   equivalent.** SKILL.md lines 151–153. The recommended transformation
-  is saturating on the left and panicking on the right. An agent
-  pattern-matching the example can introduce runtime panics in
-  production. Mitigation: replace the example or add a bounds-check
-  caveat.
+  is saturating on the left and panicking on the right. An agent that
+  pattern-matches the example could introduce runtime panics at
+  production call sites where `n > slice.len()` is reachable but not
+  covered by tests. Mitigation: replace the example or add a
+  bounds-check caveat.
 
 - **A3 — Diminishing-return threshold should scale with measurement
   variance.** SKILL.md line 233. A 1-2% threshold is at or below
