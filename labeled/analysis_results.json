@@ -1,0 +1,120 @@
+{
+  "n_cases_total": 65,
+  "launch_date": "2026-03-16T00:00:00+00:00",
+  "era_counts": {
+    "post_launch": 50,
+    "pre_launch": 15
+  },
+  "mode_outcome_contingency": {
+    "Simulation_True": 23,
+    "Simulation_False": 18,
+    "WallTime_True": 7,
+    "WallTime_False": 15,
+    "Unknown_True": 2,
+    "Unknown_False": 0
+  },
+  "headline_test": {
+    "test_name": "repo-stratified permutation test of merge-after-flag rate, Sim vs WT",
+    "observed_rate_diff_sim_minus_wt": 0.24279379157427944,
+    "two_sided_p_value": 0.769,
+    "permutations": 10000,
+    "bootstrap_point": 0.24279379157427944,
+    "bootstrap_ci_lo95": 0.012195121951219523,
+    "bootstrap_ci_hi95": 0.47339246119733924,
+    "bootstrap_reps": 10000
+  },
+  "per_repo": [
+    {
+      "repo": "astral-sh/ruff",
+      "n": 18,
+      "merged": 4,
+      "merged_as_is": 2,
+      "rate_str": "0.222  [0.090, 0.452]"
+    },
+    {
+      "repo": "astral-sh/uv",
+      "n": 4,
+      "merged": 3,
+      "merged_as_is": 0,
+      "rate_str": "(n too small, raw only)"
+    },
+    {
+      "repo": "biomejs/biome",
+      "n": 2,
+      "merged": 2,
+      "merged_as_is": 2,
+      "rate_str": "(n too small, raw only)"
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "n": 9,
+      "merged": 4,
+      "merged_as_is": 4,
+      "rate_str": "0.444  [0.189, 0.733]"
+    },
+    {
+      "repo": "pydantic/pydantic",
+      "n": 13,
+      "merged": 8,
+      "merged_as_is": 6,
+      "rate_str": "0.615  [0.355, 0.823]"
+    },
+    {
+      "repo": "pydantic/pydantic-core",
+      "n": 2,
+      "merged": 2,
+      "merged_as_is": 2,
+      "rate_str": "(n too small, raw only)"
+    },
+    {
+      "repo": "tursodatabase/turso",
+      "n": 5,
+      "merged": 4,
+      "merged_as_is": 0,
+      "rate_str": "(n too small, raw only)"
+    },
+    {
+      "repo": "vercel/next.js",
+      "n": 9,
+      "merged": 5,
+      "merged_as_is": 0,
+      "rate_str": "0.556  [0.267, 0.811]"
+    },
+    {
+      "repo": "withastro/astro",
+      "n": 3,
+      "merged": 0,
+      "merged_as_is": 0,
+      "rate_str": "(n too small, raw only)"
+    }
+  ],
+  "per_mode_wilson": {
+    "Simulation": {
+      "n": 41,
+      "merged": 23,
+      "rate": 0.5609756097560976,
+      "wilson95": [
+        0.41040265151757305,
+        0.7011009522789017
+      ]
+    },
+    "WallTime": {
+      "n": 22,
+      "merged": 7,
+      "rate": 0.3181818181818182,
+      "wilson95": [
+        0.1636038735469248,
+        0.5268177721716065
+      ]
+    },
+    "Unknown": {
+      "n": 2,
+      "merged": 2,
+      "rate": 1.0,
+      "wilson95": [
+        0.34237195288961925,
+        1.0
+      ]
+    }
+  }
+}

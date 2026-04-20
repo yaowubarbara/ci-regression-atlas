@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.env
+*.log
+.codspeed-upstream/
+codspeed-upstream/

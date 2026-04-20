@@ -1,0 +1,142 @@
+{
+  "n_cases": 65,
+  "f1_outcomes": {
+    "merged": 32,
+    "abandoned": 19,
+    "open": 14
+  },
+  "f1_by_repo": {
+    "langchain-ai/langchain": {
+      "merged": 4,
+      "abandoned": 5
+    },
+    "pydantic/pydantic": {
+      "merged": 8,
+      "open": 1,
+      "abandoned": 4
+    },
+    "astral-sh/ruff": {
+      "abandoned": 8,
+      "merged": 4,
+      "open": 6
+    },
+    "tursodatabase/turso": {
+      "abandoned": 1,
+      "merged": 4
+    },
+    "biomejs/biome": {
+      "merged": 2
+    },
+    "astral-sh/uv": {
+      "merged": 3,
+      "abandoned": 1
+    },
+    "pydantic/pydantic-core": {
+      "merged": 2
+    },
+    "withastro/astro": {
+      "open": 3
+    },
+    "vercel/next.js": {
+      "open": 4,
+      "merged": 5
+    }
+  },
+  "f2_top_benchmarks": [
+    [
+      "test_async_callbacks_in_sync",
+      8
+    ],
+    [
+      "test_simple_recursive_model_schema_generation",
+      6
+    ],
+    [
+      "packages-bundle.js[full]",
+      6
+    ],
+    [
+      "colour_science",
+      5
+    ],
+    [
+      "test_validators_build",
+      4
+    ],
+    [
+      "resolve_warm_jupyter",
+      4
+    ],
+    [
+      "test_list_of_strs_json_uncached",
+      3
+    ],
+    [
+      "pandas",
+      3
+    ],
+    [
+      "altair",
+      3
+    ],
+    [
+      "pydantic",
+      3
+    ]
+  ],
+  "f2_top_repo_bench": [
+    [
+      "langchain-ai/langchain::test_async_callbacks_in_sync",
+      8
+    ],
+    [
+      "pydantic/pydantic::test_simple_recursive_model_schema_generation",
+      6
+    ],
+    [
+      "vercel/next.js::packages-bundle.js[full]",
+      6
+    ],
+    [
+      "astral-sh/ruff::colour_science",
+      5
+    ],
+    [
+      "pydantic/pydantic::test_validators_build",
+      4
+    ],
+    [
+      "astral-sh/uv::resolve_warm_jupyter",
+      4
+    ],
+    [
+      "astral-sh/ruff::pandas",
+      3
+    ],
+    [
+      "astral-sh/ruff::altair",
+      3
+    ],
+    [
+      "astral-sh/ruff::pydantic",
+      3
+    ],
+    [
+      "withastro/astro::Build: hybrid site (static + server)",
+      3
+    ]
+  ],
+  "f3_latency": {
+    "n_with_latency": 42,
+    "p25_min": 41.06666666666667,
+    "p50_min": 537.0166666666667,
+    "p75_min": 2677.75,
+    "p90_min": 6116.416666666667,
+    "buckets": {
+      "under_15min": 8,
+      "15min_to_1day": 19,
+      "1_to_7_days": 12,
+      "over_7_days": 3
+    }
+  }
+}
